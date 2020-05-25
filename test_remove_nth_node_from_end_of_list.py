@@ -17,10 +17,8 @@ class ListNode:
 class Solution():
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         node = head
-        i = 0
-        while i < n:
+        for _ in range(0, n):
             node = node.next
-            i += 1
         if node is None:
             return head.next
         else:

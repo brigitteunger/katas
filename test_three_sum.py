@@ -4,7 +4,7 @@ from data_long_list_three_sum import long_list, long_list_sol
 
 
 class Solution():
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def three_sum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         set_triplets = set()
         for index in range(len(nums)-2):
@@ -31,11 +31,11 @@ class TestThreeSum(unittest.TestCase):
         self.sol = Solution()
 
     def test_threeSum(self):
-        self.assertEqual(sorted(self.sol.threeSum([-1, 0, 1, 2, -1, -4])),
+        self.assertEqual(sorted(self.sol.three_sum([-1, 0, 1, 2, -1, -4])),
                          [[-1, -1, 2], [-1, 0, 1]])
 
     def test_threeSum_000(self):
-        self.assertEqual(self.sol.threeSum([0, 0, 0]), [[0, 0, 0]])
+        self.assertEqual(self.sol.three_sum([0, 0, 0]), [[0, 0, 0]])
 
     def test_threeSum_long_list(self):
-        self.assertEqual(sorted(self.sol.threeSum(long_list)), long_list_sol)
+        self.assertEqual(sorted(self.sol.three_sum(long_list)), long_list_sol)
