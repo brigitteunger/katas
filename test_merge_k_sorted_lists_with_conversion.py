@@ -12,9 +12,9 @@ class Solution():
     def merge_k_lists(self, lists: List[ListNode]) -> ListNode:
         all_list = []
         for linked_list in lists:
-            all_list = all_list + self.convert_list_2_linked_list(linked_list)
+            all_list = all_list + self.convert_linked_list_2_list(linked_list)
         all_list.sort()
-        head = self.convert_linked_list_2_list(all_list)
+        head = self.convert_list_2_linked_list(all_list)
         return head
 
     def convert_list_2_linked_list(self, vals: list) -> ListNode:
@@ -173,4 +173,5 @@ class TestListNode(unittest.TestCase):
 
 
 test_ = TestListNode()
-test_.test_convertion()
+test_.setUp()
+test_.test_merge_k_lists_two_lists()
