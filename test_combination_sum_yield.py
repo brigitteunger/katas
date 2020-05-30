@@ -10,23 +10,28 @@ class Solution:
             return []
         candidates.sort()
         combinations = []
-
-        for candidate in candidates:
-            if candidate > target:
-                return combinations
-            elif candidate == target:
-                combinations.append([candidate])
-                return combinations
-            else:  # candidates[i] < target:
-                new_target = target - candidate
-                index = candidates.index(candidate)
-                part_combinations = self.combinationSum(candidates[index:],
-                                                        new_target)
-                for part_combination in part_combinations:
-                    part_combination.append(candidate)
-                    combinations = self.append_list_in_list(part_combination,
-                                                            combinations)
+        for combination in self.generator_combination(candidates, target):
+            combinations = self.append_list_in_list(combination, combinations)
         return combinations
+
+    def generator_combination(self, candidates: List[int],
+                              target: int) -> List[List[int]]:
+        i = 0
+        length_candiates = len(candidates)
+        while i < length_candiates:
+            if candidates[i] > target:
+                break
+            elif candidates[i] == target:
+                yield [candidates[i]]
+                break
+            else:  # candidates[i] < target:
+                new_target = target - candidates[i]
+                part_combinations = self.generator_combination(
+                                     candidates[i:], new_target)
+                for part_combination in part_combinations:
+                    part_combination.append(candidates[i])
+                    yield part_combination
+            i += 1
 
     def append_list_in_list(self, new_combination: List[int], combinations:
                             List[List[int]]) -> List[List[int]]:
