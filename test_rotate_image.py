@@ -17,7 +17,7 @@ class Solution():
         steps_to_inner = int(n/2)
         for step_in in range(steps_to_inner):
             for step_rows in range(n-1-step_in*2):
-                temp = matrix[n-1 - step_rows-step_in][step_in]  # speichere 2,1
+                temp = matrix[n-1 - step_rows-step_in][step_in]
                 matrix[n-1 - step_rows-step_in][step_in] = (
                     matrix[n-1-step_in][n-1-step_rows-step_in])  # 2,2->2,1
                 matrix[n-1-step_in][n-1 - step_rows-step_in] = (
