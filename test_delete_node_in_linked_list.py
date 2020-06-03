@@ -74,10 +74,3 @@ class testDeleteNode(unittest.TestCase):
         actual_list = self.generate_list(head)
 
         self.assertEqual(actual_list, expected_list)
-
-
-
-
-
-
-
