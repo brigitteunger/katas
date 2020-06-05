@@ -134,5 +134,4 @@ dmypy.json
 
 # MISC
 dsf.py
-test_group_anagrams.py
 print_table_nicely.py
