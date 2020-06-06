@@ -52,7 +52,7 @@ class TestGroupAnagrams(unittest.TestCase):
         self.assertEqual(actual_anagrams, expected_anagrams)
 
     def test_group_anagrams_standard(self):
-        strs = ["eat", "tea", "tan", "ate", "nat", "bat","s"]
+        strs = ["eat", "tea", "tan", "ate", "nat", "bat", "s"]
         expected_anagrams = [["ate", "eat", "tea"],
                              ["nat", "tan"],
                              ["bat"],
