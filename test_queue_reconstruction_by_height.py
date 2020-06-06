@@ -6,22 +6,26 @@ class Solution():
     def reconstructQueue(self, people: List[List[int]], expected_queue
                          ) -> List[List[int]]:
         people.sort()
-        people_sorted = []
         slice_people_sorted = []
-
-        for peo in people:
+        people_reconstructed = []
+        num_people = len(people)
+        for i in range(num_people-1, -1, -1):
+            peo = people[i]
             if not slice_people_sorted:
                 slice_people_sorted.append(peo)
             elif peo[0] == slice_people_sorted[0][0]:
                 slice_people_sorted.append(peo)
             else:
-                people_sorted = slice_people_sorted + people_sorted
+                slice_num_people = len(slice_people_sorted)
+                for j in range(slice_num_people-1, -1, -1):
+                    peo_ = slice_people_sorted[j]
+                    people_reconstructed.insert(peo_[1], peo_)
                 slice_people_sorted.clear()
                 slice_people_sorted.append(peo)
 
-        people_reconstructed = slice_people_sorted
-
-        for peo in people_sorted:
+        slice_num_people = len(slice_people_sorted)
+        for j in range(slice_num_people-1, -1, -1):
+            peo = slice_people_sorted[j]
             people_reconstructed.insert(peo[1], peo)
         return people_reconstructed
 
@@ -58,9 +62,17 @@ class TestReconstructQueue(unittest.TestCase):
 
         self.assertEqual(actual_queue, expected_queue)
 
+    def test_reconstruct_queue_standard_on_elem(self):
+        input_queue = [[1, 0]]
+        expected_queue = [[1, 0]]
+
+        actual_queue = self.sol.reconstructQueue(input_queue, expected_queue)
+
+        self.assertEqual(actual_queue, expected_queue)
+
 
 test_ = TestReconstructQueue()
 test_.setUp()
 test_.test_reconstruct_queue_standard()
-test_.test_reconstruct_queue_standard_hard()
-test_.test_reconstruct_queue_standard_harder()
+#  test_.test_reconstruct_queue_standard_hard()
+#  test_.test_reconstruct_queue_standard_harder()
