@@ -28,6 +28,13 @@ class TestMaxSubArray(unittest.TestCase):
 
         self.assertEqual(actual_sum, 6)
 
+    def test_max_subarray_one_pus(self):
+        nums = [-2, 1, -3, -1,  -5]
+
+        actual_sum = self.sol.maxSubArray(nums)
+
+        self.assertEqual(actual_sum, 1)
+
     def test_max_subarray_empty_list(self):
         nums = []
 
@@ -56,12 +63,19 @@ class TestMaxSubArray(unittest.TestCase):
 
         self.assertEqual(actual_sum, -1)
 
-    def test_max_subarray_only_negs(self):
+    def test_max_subarray_two_pos(self):
         nums = [1, 2]
 
         actual_sum = self.sol.maxSubArray(nums)
 
         self.assertEqual(actual_sum, 3)
+
+    def test_max_subarray_use_neg(self):
+        nums = [-1, 2, -1, 3, -1]
+
+        actual_sum = self.sol.maxSubArray(nums)
+
+        self.assertEqual(actual_sum, 4)
 
 
 if __name__ == '__main__':
