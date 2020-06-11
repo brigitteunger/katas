@@ -137,7 +137,5 @@ class TestSearchInsert(unittest.TestCase):
         self.assertEqual(actual_index, 0)
 
 
-
-
 if __name__ == '__main__':
     unittest.main()
