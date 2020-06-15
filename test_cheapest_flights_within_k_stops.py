@@ -4,7 +4,7 @@ from typing import List
 
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]],
-                          src: int, dst: int, K: int) -> int:
+                          src: int, dst: int, k: int) -> int:
         if src == dst:
             return 0
         if not flights:
@@ -28,7 +28,7 @@ class Solution:
             prices_to_city[key] = {0: flight[2]}
 
         # add prices according to layover ...
-        for layover in range(1, K+1):
+        for layover in range(1, k+1):
             for start_city in range(0, n):
                 if src == start_city:
                     continue
@@ -133,7 +133,8 @@ class TestFindCheapestPrice(unittest.TestCase):
 
     def test_find_cheapest_price_many_six_sth(self):
         n = 5
-        flights = [[4, 1, 1], [1, 2, 3], [0, 3, 2], [0, 4, 10], [3, 1, 1],[1, 4, 3]]
+        flights = [[4, 1, 1], [1, 2, 3], [0, 3, 2], [0, 4, 10],
+                   [3, 1, 1], [1, 4, 3]]
         src = 2
         dst = 1
         k = 1
