@@ -13,7 +13,7 @@ class Solution:
         hp_to_enter = [[None]*cols for row in dungeon]
 
         for row in range(rows-1, -1, -1):
-            #self.print_dungon(hp_to_enter)
+            # self.print_dungon(hp_to_enter)
             for col in range(cols-1, -1, -1):
 
                 if row + 1 == rows:
@@ -31,7 +31,7 @@ class Solution:
                                             neighbor_right,
                                             neigbor_bottom
                                             )
-        #self.print_dungon(hp_to_enter)
+        # self.print_dungon(hp_to_enter)
         return hp_to_enter[0][0]
 
     def calc_min_HP(self, val_cell: int, neighbor_right: int,
