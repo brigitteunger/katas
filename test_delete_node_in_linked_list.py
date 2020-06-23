@@ -18,7 +18,7 @@ class Solution():
         node.next = node.next.next
 
 
-class testDeleteNode(unittest.TestCase):
+class TestDeleteNode(unittest.TestCase):
     def setUp(self):
         self.sol = Solution()
 
