@@ -5,10 +5,9 @@ from typing import List
 class Solution:
     def prisonAfterNDays(self, cells: List[int], N: int) -> List[int]:
         cells_after = [0, 0, 0, 0, 0, 0, 0, 0]
-        cell_after_days = {}
+        cell_after_days = []
 
         for days in range(1, N+1):
-
             for m in range(1, 7):
                 if cells[m-1] == cells[m+1]:
                     cells_after[m] = 1
@@ -16,17 +15,14 @@ class Solution:
                     cells_after[m] = 0
             cells = cells_after[:]
 
-            str_cells = "".join(str(x) for x in cells_after)
-            if str_cells in cell_after_days:
+            if cells in cell_after_days:
                 num = N % (days-1)  # days-1 = len(cell_after_days)
                 if num == 0:
-                    num = days - 1
-                for key, val in cell_after_days.items():
-                    if val == num:
-                        final_cell = [int(item) for item in key]
-                        return final_cell
+                    return cell_after_days[-1]
+                else:
+                    return cell_after_days[num-1]
             else:
-                cell_after_days[str_cells] = days
+                cell_after_days.append(cells)
 
         return cells
 
