@@ -48,6 +48,5 @@ class TestPlusOne(unittest.TestCase):
         self.assertEqual(actual_plus_one,  [1, 0, 0, 0])
 
 
-
 if __name__ == "__main__":
     unittest.main()
