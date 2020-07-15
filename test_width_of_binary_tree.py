@@ -17,7 +17,8 @@ class Solution:
         self.updateRanges(root, range_per_level, 0, 0)
         return self.findMaxWidth(range_per_level)
 
-    def updateRanges(self, node: TreeNode, range_per_level: Dict, level: int, pos: int) -> None:
+    def updateRanges(self, node: TreeNode, range_per_level: Dict, level: int,
+                     pos: int) -> None:
         if level in range_per_level:
             current_range = range_per_level[level]
             if pos < current_range[0]:
@@ -248,7 +249,6 @@ class TestWidthOfBinaryTree(unittest.TestCase):
         width = self.sol.widthOfBinaryTree(root)
 
         self.assertEqual(width, 2)
-
 
 
 if __name__ == "__main__":
