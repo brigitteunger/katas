@@ -1,6 +1,6 @@
 import unittest
 from typing import Dict, List
-from data_course_schedule import num_courses_2, prerequisites_2
+from data_course_schedule import num_courses_2, prerequisites_2, schedule_2
 
 
 class CircleFound(Exception):
@@ -103,7 +103,7 @@ class TestFindOrders(unittest.TestCase):
     def testFindOrderCircle_big(self):
         schedule = self.sol.findOrder(num_courses_2, prerequisites_2)
 
-        self.assertEqual(schedule, [2, 1, 0])
+        self.assertEqual(schedule, schedule_2)
 
 
 if __name__ == "__main__":
