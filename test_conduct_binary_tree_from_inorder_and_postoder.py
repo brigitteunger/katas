@@ -140,7 +140,5 @@ class TestBuiltTree(unittest.TestCase):
         self.assertEqual(actual_vals, expected_vals)
 
 
-
-
 if __name__ == "__main__":
     unittest.main()
