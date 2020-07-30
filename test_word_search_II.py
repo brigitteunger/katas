@@ -125,25 +125,22 @@ class TestFindWords(unittest.TestCase):
         found_words = self.sol.findWords(board_1, words_1)
 
         self.assertEqual(found_words,
-                          ['aaaaaaaaaaaaaaaa',
-                           'aaaaaaaaaaaaaaac',
-                           'aaaaaaaaaaaaaadc',
-                           'aaaaaaaaaaaaaade',
-                           'aaaaaaaaaaaaaadh',
-                           'aaaaaaaaaaaaaabc',
-                           'aaaaaaaaaaaaaabf',
-                           'aaaaaaaaaaaaaaae',
-                           'aaaaaaaaaaaaaaed',
-                           'aaaaaaaaaaaaaaei',
-                           'aaaaaaaaaaaaaacb',
-                           'aaaaaaaaaaaaaacd',
-                           'aaaaaaaaaaaaaacg',
-                           'aaaaaaaaaaaaaaad',
-                           'aaaaaaaaaaaaaaab'])
+                         ['aaaaaaaaaaaaaaaa',
+                          'aaaaaaaaaaaaaaac',
+                          'aaaaaaaaaaaaaadc',
+                          'aaaaaaaaaaaaaade',
+                          'aaaaaaaaaaaaaadh',
+                          'aaaaaaaaaaaaaabc',
+                          'aaaaaaaaaaaaaabf',
+                          'aaaaaaaaaaaaaaae',
+                          'aaaaaaaaaaaaaaed',
+                          'aaaaaaaaaaaaaaei',
+                          'aaaaaaaaaaaaaacb',
+                          'aaaaaaaaaaaaaacd',
+                          'aaaaaaaaaaaaaacg',
+                          'aaaaaaaaaaaaaaad',
+                          'aaaaaaaaaaaaaaab'])
 
 
 if __name__ == "__main__":
     unittest.main()
-    #test_ = TestFindWords()
-    #test_.setUp()
-    #test_.test_find_words_4x4()
