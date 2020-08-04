@@ -6,39 +6,38 @@ class Solution:
         return format(int(a, 2) + int(b, 2), '0b')
 
     def addBinaryBitByBit(self, a: str, b: str) -> str:
-        list_a = list(a)
-        list_b = list(b)
-        len_a = len(list_a)
-        len_b = len(list_b)
+        len_a = len(a)
+        len_b = len(a)
         diff = abs(len_a - len_b)
         if len_a > len_b:
-            list_b = [0]*diff + list_b
+            b = [0]*diff + b
         elif len_a < len_b:
-            list_a = [0]*diff + list_a
+            b = [0]*diff + a
 
-        len_max = len(list_a)
-        list_sum = [0]*len_max
+        len_max = len(a)
+        sum = [0]*len_max
         carry = 0
 
         for i in range(len_max-1, -1, -1):
-            sum_bits = carry + int(list_a[i]) + int(list_b[i])
+            sum_bits = carry + int(a[i]) + int(b[i])
             if sum_bits == 0:
-                list_sum[i] = '0'
+                sum[i] = '0'
                 carry = 0
             elif sum_bits == 1:
-                list_sum[i] = '1'
+                sum[i] = '1'
                 carry = 0
             elif sum_bits == 2:
-                list_sum[i] = '0'
+                sum[i] = '0'
                 carry = 1
             else:  # sum_ == 3:
-                list_sum[i] = '1'
+                sum[i] = '1'
                 carry = 1
 
+        first_letter = ''
         if carry == 1:
-            list_sum.insert(0, '1')
+            first_letter = '1'
 
-        sum_str = ''.join(list_sum)
+        sum_str = first_letter.join(sum)
         return sum_str
 
 
