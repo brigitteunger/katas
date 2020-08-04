@@ -61,7 +61,7 @@ class TestIsPalindrome(unittest.TestCase):
 
         self.assertTrue(evaluation)
 
-    def test_is_palindrome_4(self):
+    def test_is_palindrome_5(self):
         s = "aaa"
 
         evaluation = self.sol.isPalindrome(s)
