@@ -135,3 +135,4 @@ dmypy.json
 # MISC
 dsf.py
 print_table_nicely.py
+matrix_print.py
