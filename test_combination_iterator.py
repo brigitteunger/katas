@@ -25,7 +25,7 @@ class CombinationIterator:
         for mask in masks:
             combination = ''
             for index in range(len_char):
-                if mask[index] is '1':
+                if mask[index] == '1':
                     combination += char_list[index]
             comb_list.append(combination)
 
