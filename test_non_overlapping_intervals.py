@@ -8,7 +8,8 @@ class Solution:
         if not intervals:
             return 0
 
-        intervals.sort(key=lambda interval: (interval[1], interval[1]-interval[0]))
+        intervals.sort(key=lambda interval: (interval[1],
+                                             interval[1]-interval[0]))
         min_erase = 0
         left_end = intervals[0][0]-1
         for interval in intervals:
@@ -106,7 +107,6 @@ class TestEraseOverlapIntervals(unittest.TestCase):
         num_to_remove = self.sol.eraseOverlapIntervals(intervals)
 
         self.assertEqual(num_to_remove, 2)
-
 
 
 if __name__ == "__main__":
