@@ -11,9 +11,10 @@ class Solution:
         self.__calc_weights_rect__()
 
     def __calc_weights_rect__(self) -> None:
-        perimeters = [(abs(rect[2]-rect[0])+1)*(abs(rect[3]-rect[1])+1)
-                      for rect in self.rects]
-        self.weights = [perimeter/sum(perimeters) for perimeter in perimeters]
+        areas = [(abs(rect[2]-rect[0])+1)*(abs(rect[3]-rect[1])+1)
+                 for rect in self.rects]
+        sum_areas = sum(areas)
+        self.weights = [area/sum_areas for area in areas]
 
     def pick(self) -> List[int]:
         # pick rectangle:
