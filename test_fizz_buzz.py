@@ -54,7 +54,7 @@ class TestFizzBuzz(unittest.TestCase):
 
         strings = self.sol.fizzBuzz(n)
 
-        self.assertEqual(strings,[])
+        self.assertEqual(strings, [])
 
 
 if __name__ == "__main__":
