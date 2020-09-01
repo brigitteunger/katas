@@ -1,5 +1,5 @@
 import unittest
-from data_target_component_size_by_common_factor import A2
+from data_largest_component_size_by_common_factor import A2
 from collections import defaultdict
 from typing import Dict, List
 
