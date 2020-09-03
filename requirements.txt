@@ -1,0 +1,8 @@
+#
+####### requirements.txt #######
+#
+###### Requirements without Version Specifiers ######
+flake8
+pytest
+numpy
+sortedcontainers
