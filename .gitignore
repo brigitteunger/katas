@@ -107,6 +107,7 @@ celerybeat.pid
 env/
 venv/
 ENV/
+leetcode/
 env.bak/
 venv.bak/
 venv_100doc/
