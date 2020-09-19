@@ -26,7 +26,7 @@ class TestMaxProfit(unittest.TestCase):
         self.assertEqual(profit, 5)
 
     def testMaxProfit_2(self):
-        prices =[7, 6, 4, 3, 1]
+        prices =[ 7, 6, 4, 3, 1]
 
         profit = self.sol.maxProfit(prices)
 
