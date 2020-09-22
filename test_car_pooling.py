@@ -5,7 +5,7 @@ from typing import List, Dict, Tuple
 class Solution:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
         pick_up_dict, min_pick, _ = self.create_passenger_dict(trips, 1)
-        drop_off_dict, _ , max_drop = self.create_passenger_dict(trips, 2)
+        drop_off_dict, _, max_drop = self.create_passenger_dict(trips, 2)
 
         passengers = 0
         for i in range(min_pick, max_drop):
