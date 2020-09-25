@@ -34,5 +34,6 @@ class TestFindTheDifference(unittest.TestCase):
 
         self.assertEqual(difference, "a")
 
+
 if __name__ == "__main__":
     unittest.main()
