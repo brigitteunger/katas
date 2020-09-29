@@ -38,7 +38,7 @@ class Solution:
             return None
 
         product = self.productInterval(new_start, new_end, nums)
-        while 1:  # abbruch?
+        while 1:
             if new_start == new_end:
                 while nums[new_start] >= k:
                     product /= nums[new_start]
